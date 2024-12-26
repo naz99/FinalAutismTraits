@@ -129,7 +129,7 @@ def autism_info_page():
 # Function for the ASD Traits Prediction Page
 def asd_prediction_page():
     # Custom styles for title and subtitle
-    st.markdown("<h1 style='font-size: 28px;'>Autism Spectrum Disorder (ASD) Traits Test</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 30px;'>Autism Spectrum Disorder (ASD) Traits Test</h1>", unsafe_allow_html=True)
     
     # Description for users
     st.markdown("""
