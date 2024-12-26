@@ -129,7 +129,7 @@ def autism_info_page():
 # Function for the ASD Traits Prediction Page
 def asd_prediction_page():
     # Custom styles for title and subtitle
-    st.markdown("<h1 style='font-size: 30px;'>Autism Spectrum Disorder (ASD) Traits Test</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 40px;'>Autism Spectrum Disorder (ASD) Traits Test</h1>", unsafe_allow_html=True)
     
     # Description for users
     st.markdown("""
@@ -140,8 +140,8 @@ def asd_prediction_page():
         </p>
         <p style='font-size: 20px; line-height: 1.8;'>
         <span style='background-color: yellow; font-weight: bold;'>Scoring:</span><br>
-        - For questions 1-9 (A1-A9), if your response is <em>Sometimes, Rarely, or Never</em>, a score of <strong>1</strong> is assigned.<br>
-        - For question 10 (A10), if your response is <em>Always, Usually, or Sometimes</em>, a score of <strong>1</strong> is assigned.<br>
+        - For questions 1-9 (A1-A9), if your response is <em>Sometimes,Quite difficult, A few times a week, slightly unusual, less than once a week, Very difficult Rarely, or Never</em>, a score of <strong>1</strong> is assigned.<br>
+        - For question 10 (A10), if your response is <em>Always, Very easy, Many times a day, Very typical Usually, or Sometimes</em>, a score of <strong>1</strong> is assigned.<br>
         </p>
         <p style='font-size: 20px; line-height: 1.8;'>
         Add up your scores for all 10 questions. If your total score is <strong>more than 3</strong>, there is a possibility of ASD traits. 
@@ -153,21 +153,27 @@ def asd_prediction_page():
     # Instructions before the questions
     st.markdown("<h2 style='font-size: 28px; background-color: yellow; padding: 5px; border-radius: 5px;'>Please answer the following questions:</h2>", unsafe_allow_html=True)
 
-    st.markdown("<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
-                "(1 = Sometimes/Rarely/Never , 0 = Always/Usually):</h2>", 
-                unsafe_allow_html=True)
-
     questions = [
-        "Does your child look at you when you call his/her name? / **Adakah anak anda memandang kepada anda apabila anda memanggil nama mereka**?",
-        "How easy is it for you to get eye contact with your child? / **Sejauh mana mudah bagi anda untuk mendapatkan hubungan mata dengan anak anda**?",
-        "Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach) / **Adakah anak anda menunjuk untuk menunjukkan bahawa mereka mahu sesuatu? (contohnya mainan yang berada di luar jangkauan**)",
-        "Does your child point to share interest with you? (e.g. pointing at an interesting sight) / **Adakah anak anda menunjuk untuk berkongsi minat dengan anda? (contohnya menunjuk kepada pemandangan yang menarik**)",
-        "Does your child pretend? (e.g. care for dolls, talk on a toy phone) / **Adakah anak anda berpura-pura? (contohnya menjaga anak patung, bercakap menggunakan telefon mainan**)",
-        "Does your child follow where you’re looking? / Adakah anak anda mengikuti tempat yang anda pand ang?",
-        "If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them) / **Jika anda atau seseorang dalam keluarga kelihatan tertekan, adakah anak anda menunjukkan tanda-tanda ingin menenangkan mereka? (contohnya, mengusap rambut, memeluk mereka**)",
-        "Would you describe your child’s first words as: / **Adakah anda menggambarkan perkataan pertama anak anda sebagai:**",
-        "Does your child use simple gestures? (e.g. wave goodbye) / **Adakah anak anda menggunakan isyarat mudah? (contohnya melambai selamat tinggal)**",
-        "Does your child stare at nothing with no apparent purpose? / **Adakah anak anda merenung ke arah sesuatu tanpa tujuan yang jelas?**"
+        "Does your child look at you when you call his/her name? / Adakah anak anda memandang kepada anda apabila anda memanggil nama mereka?" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Always/Usually , 1 = Sometimes/Rarely/Never):</h2>",
+        "How easy is it for you to get eye contact with your child? / Sejauh mana mudah bagi anda untuk mendapatkan hubungan mata dengan anak anda?" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Very easy/Quite easy , 1 = Quite difficult/Very difficult/Impossible):</h2>",
+        "Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach) / Adakah anak anda menunjuk untuk menunjukkan bahawa mereka mahu sesuatu? (contohnya mainan yang berada di luar jangkauan)" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Many times a day/A few times a day , 1 = A few times a week/Less than once a week/Never):</h2>",
+        "Does your child point to share interest with you? (e.g. pointing at an interesting sight) / Adakah anak anda menunjuk untuk berkongsi minat dengan anda? (contohnya menunjuk kepada pemandangan yang menarik)" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Many times a day/A few times a day , 1 = A few times a week/Less than once a week/Never):</h2>",
+        "Does your child pretend? (e.g. care for dolls, talk on a toy phone) / Adakah anak anda berpura-pura? (contohnya menjaga anak patung, bercakap menggunakan telefon mainan)" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Many times a day/A few times a day , 1 = A few times a week/Less than once a week/Never):</h2>",
+        "Does your child follow where you’re looking? / Adakah anak anda mengikuti tempat yang anda pandang?" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Many times a day/A few times a day , 1 = A few times a week/Less than once a week/Never):</h2>",
+        "If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them) / Jika anda atau seseorang dalam keluarga kelihatan tertekan, adakah anak anda menunjukkan tanda-tanda ingin menenangkan mereka? (contohnya, mengusap rambut, memeluk mereka)" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Always/Usually , 1 = Sometimes/Rarely/Never):</h2>",
+        "Would you describe your child’s first words as: / Adakah anda menggambarkan perkataan pertama anak anda sebagai:" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Very typical/Quite typical , 1 = Slightly unusual/Very unusual/My child doesn't speak):</h2>",
+        "Does your child use simple gestures? (e.g. wave goodbye) / Adakah anak anda menggunakan isyarat mudah? (contohnya melambai selamat tinggal)" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Many times a day/A few times a day , 1 = A few times a week/Less than once a week/Never):</h2>",
+        "Does your child stare at nothing with no apparent purpose? / Adakah anak anda merenung ke arah sesuatu tanpa tujuan yang jelas?" "<h2 style='font-size: 19px; background-color: white; padding: 5px; border-radius: 5px; margin-top: 15px;'>"
+                "(0 = Many times a day/A few times a day , 1 = A few times a week/Less than once a week/Never):</h2>"
     ]
     
     responses = []  # Initialize an empty list to store answers
@@ -183,6 +189,8 @@ def asd_prediction_page():
 
     # Additional user information (optional)
     st.header("Additional User Information")
+    st.markdown("<h2 style='font-size: 28px; background-color: yellow; padding: 5px; border-radius: 5px;'>This additional user information doesn't effect the prediction of autism traits. Only works as additional information about the children</h2>", unsafe_allow_html=True)
+  
     st.markdown("<h3 style='font-size: 28px;'>Age (Years)/ Umur (Tahun)</h3>", unsafe_allow_html=True)
     age = st.number_input("", min_value=0, max_value=120, value=0)
 
