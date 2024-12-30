@@ -223,6 +223,15 @@ def asd_prediction_page():
         result = "Potential ASD Traits" if score > 3 else "No ASD Traits"
         st.success(f"Prediction Result: {result}")
 
+# Popup effect
+        with st.expander("View Prediction Details"):
+            st.markdown(f"<h2 style='font-size: 28px;'>Prediction Result: {result}</h2>", unsafe_allow_html=True)
+            st.markdown("<h3>Details of Your Responses:</h3>", unsafe_allow_html=True)
+            for i, response in enumerate(responses):
+                st.markdown(f"**Question {i+1}:** {response}")
+            st.markdown(f"**Total Score:** {score}/10")# Popup to show answers and result
+       
+
 
 
 # Profile Page with phone number, address, and delete account option
